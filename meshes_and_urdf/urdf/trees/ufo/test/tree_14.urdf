@@ -1,0 +1,28 @@
+<robot name="ur5e" xmlns:xacro="http://ros.org/wiki/xacro">
+                <link name="tree">
+                    <visual>
+                    <geometry>
+                        <mesh filename="../meshes/trees/ufo/test/tree_14.obj" scale="1 1 1"/>
+                    </geometry>
+                    <material name="LightGrey">
+                        <color rgba="0.7 0.7 0.7 1.0"/>
+                    </material>
+                    </visual>
+                    <collision concave = "true">
+                    <geometry>
+                        <mesh filename="../meshes/trees/ufo/test/tree_14.obj" scale="1 1 1"/>
+                    </geometry>
+                    </collision>
+                    <inertial>
+                    <mass value="4.0"/>
+                    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+                    <inertia ixx="0.00443333156" ixy="0.0" ixz="0.0" iyy="0.00443333156" iyz="0.0" izz="0.0072"/>
+                    </inertial>
+                </link>
+                    <link name="world"/>
+                <joint name="tree_joint" type="fixed">
+                    <parent link="world"/>
+                    <child link="tree"/>
+                    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+                </joint>
+            </robot>
